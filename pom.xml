@@ -17,6 +17,9 @@
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
   </properties>
+  <properties>
+    <sonar.token>sqp_c267630ab59c34d9f2ccf1244372a26bf08d2da8</sonar.token>
+  </properties>
 
   <dependencies>
     <dependency>
