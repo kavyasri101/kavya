@@ -9,7 +9,7 @@
   <version>1.0-SNAPSHOT</version>
 
   <name>my-app</name>
-  <!-- FIXME change it to the project's website -->
+ 
   <url>http://www.example.com</url>
 
   <properties>
@@ -17,19 +17,45 @@
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
   </properties>
-  <properties>
-    <sonar.token>sqp_c267630ab59c34d9f2ccf1244372a26bf08d2da8</sonar.token>
-  </properties>
+     <profiles>
+        <profile>
+            <id>sonar</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <!-- Optional URL to server. Default value is http://localhost:9000 -->
+                <sonar.host.url>
+                  http://localhost:9099
+                </sonar.host.url>
+                <sonar.token>
+                  sqp_c267630ab59c34d9f2ccf1244372a26bf08d2da8
+
+                </sonar.token>
+                <!-- <sonar.login>admin</sonar.login>
+                <sonar.password>Kavya@18</sonar.password> -->
+            </properties>
+        </profile>
+     </profiles>
+
 
   <dependencies>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>4.12</version>
-      <scope>test</scope>
-    </dependency>
+   <!-- https://mvnrepository.com/artifact/org.sonarsource.scanner.maven/sonar-maven-plugin -->
+   <dependency>
+       <groupId>org.sonarsource.scanner.maven</groupId>
+       <artifactId>sonar-maven-plugin</artifactId>
+       <version>3.9.1.2184</version>
+  </dependency>
+
+   <dependency>
+     <groupId>junit</groupId>
+        <artifactId>junit</artifactId>
+        <version>4.12</version>
+        <scope>test</scope>
+   </dependency>
   </dependencies>
 
+    
   <build>
     <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
       <plugins>
